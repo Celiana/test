@@ -41,6 +41,10 @@
 	.lightblue-theme.height-focus.circle-lower {
 	  fill: #FF0;
 	}
+	
+	.dist-marker{
+	
+	}
 	</style>
 	
 	<style>
@@ -82,7 +86,7 @@
 				
 				// Optional customizations
 				mapTypeId: 'rudyMapVanilla',
-				mapTypeIds: ['osm', 'b25000', 'eMAP5', 'satellite', 'topo', 'rudyMapColor', 'rudyMapVanilla', 'town', 'village'],
+				mapTypeIds: ['osm', 'b25000', 'eMAP5', 'topo', 'rudyMapColor', 'rudyMapVanilla', 'town', 'village'],
 				mapTypes:{
 					osm: {
 						name: "OSM",
@@ -121,6 +125,13 @@
 					rudyMapVanilla:{
 						name: "魯地圖清爽", //魯地圖清爽版(happyman提供)
 						url: 'https://rs.happyman.idv.tw/map/moi_osm/{z}/{x}/{y}.png',
+						options: {
+							attribution: '&copy; <a href="//rudy.basecamp.tw/taiwan_topo.html">Taiwan TOPO</a> contributors'
+						},
+					},
+					happymanGpxTrack:{
+						name: "地圖產生器航跡",
+						url: 'http://rs.happyman.idv.tw/map/gpxtrack/{z}/{x}/{y}.png',
 						options: {
 							attribution: '&copy; <a href="//rudy.basecamp.tw/taiwan_topo.html">Taiwan TOPO</a> contributors'
 						},
@@ -174,13 +185,6 @@
 							attribution: '&copy; <a href="https://maps.nlsc.gov.tw/S09SOA/">內政部國土測繪中心</a> contributors'
 						},
 					},
-					happymanGpxTrack:{
-						name: "地圖產生器航跡",
-						url: 'http://rs.happyman.idv.tw/map/gpxtrack/{z}/{x}/{y}.png',
-						options: {
-							attribution: '&copy; <a href="//rudy.basecamp.tw/taiwan_topo.html">Taiwan TOPO</a> contributors'
-						},
-					},
 				},
 				fullscreenControl: true,
 				resizerControl: true,
@@ -190,45 +194,96 @@
 				rotateControl: {
 					closeOnZeroBearing: true
 				},
-				//gestureHandling: true,
-				//zoomControl: true,
-				pegmanControl: false,
-				locateControl: false,
-				//layersControl: true,
-				//minimapControl: true,
+				gestureHandling: false,	// zoom with Cmd + Scroll
+				zoomControl: true,		// plus minus buttons
+				pegmanControl: false,	// Google街景人
+				locateControl: false,	// GPS定位
+				layersControl: true,
+				minimapControl: true,
 				editInOSMControl: false,
-				//loadingControl: true,
+				loadingControl: true,
 				searchControl: false,
 				//disableDefaultUI: false,
 			},
 			elevationControl: {
-				url: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b528d224-cfbd-4fe4-9d43-d6f25e64c489/2021-11-21_%E9%9B%99%E8%B2%82%E9%80%A3%E8%B5%B0%E8%B8%8F%E6%9F%A5_%E9%99%B3%E5%A4%A7%E5%93%A5.gpx?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211123T040122Z&X-Amz-Expires=86400&X-Amz-Signature=49e51acde1e395a16b9c238ab9f4c48a0c2d6ef72107c32398b2eb2d340edbc3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%222021-11-21_%25E9%259B%2599%25E8%25B2%2582%25E9%2580%25A3%25E8%25B5%25B0%25E8%25B8%258F%25E6%259F%25A5_%25E9%2599%25B3%25E5%25A4%25A7%25E5%2593%25A5.gpx%22&x-id=GetObject",
+				url: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9efc1655-d5cd-49c2-9fc7-5c14359747c8/2021-11-21_0752_%E9%9B%99%E8%B2%82%E9%80%A3%E8%B5%B0%E8%B8%8F%E6%9F%A5%281210%E6%9B%B4%E6%96%B0%29__20211121_0752.gpx?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211210%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211210T054912Z&X-Amz-Expires=86400&X-Amz-Signature=fab694e777f0d178bba6eac28dd046f6deec5ff75cc1fc0c80386b524b08c0e0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%222021-11-21%25200752%2520%25E9%259B%2599%25E8%25B2%2582%25E9%2580%25A3%25E8%25B5%25B0%25E8%25B8%258F%25E6%259F%25A5%281210%25E6%259B%25B4%25E6%2596%25B0%29__20211121_0752.gpx%22&x-id=GetObject",
 				options: {
+					
+					// Default chart colors: theme lime-theme, magenta-theme, ...
 					theme: "lightblue-theme",
 					//theme: "custom-theme-demo",
-					collapsed: false,
-					autohide: false,
-					autofitBounds: true,
-					position: "bottomleft",
+					
+					// Chart container outside/inside map container
 					detached: true,
+					
+					// if (detached), the elevation chart container
 					elevationDiv: "#elevation-div",
-					summary: "inline",
-					downloadLink: false,
+					
+					// if (!detached) initial state of chart profile control
+					collapsed: true,
+					
+					// if (!detached) autohide chart profile on chart mouseleave
+					autohide: true,
+					
+					// if (!detached) control position on one of map corners
+					position: "bottomleft",
+					//position: "topleft",
+					
+					// [Lat, Long] vs [Long, Lat] points. (leaflet default: [Lat, Long])
+					reverseCoords: false,
+					
+					// Display distance info: true || "summary"
+					// distance: true, 
+					
+					// Display altitude info: true || "summary"
+					// altitude: "disabled", 
+					
+					// Slope chart profile: true || "summary" || "disabled" || false
+					slope: "disabled",  
+					
+					// Speed chart profile: true || "summary" || "disabled" || false
+					speed: "disabled",  
+					
+					// Acceleration chart profile: true || "summary" || "disabled" || false
+					acceleration: false,  
+					
+					// Display time info: true || "summary" || false
+					time: "summary",  
+					
+					// Summary track info style: "inline" || "multiline" || false
+					summary: "inline",  
+					
+					// Download link: "link" || false || "modal"
+					downloadLink: false,  
+					
+					// Chart distance/elevation units.
 					imperial: false,
-					// altitude: "disabled",
-					slope: "disabled",
-					speed: "disabled",
-					acceleration: false,
-					time: "summary",
-					legend: true,
+					
+					// Toggle chart ruler filter
+					ruler: true, 
+					
+					// Toggle chart legend filter
+					legend: true, 
+					
+					// Autoupdate map center on chart mouseover.
 					followMarker: true,
-					almostOver: true,
-					distanceMarkers: true,
+
+					// Autoupdate map bounds on chart update.
+					autofitBounds: true,
+					
+					// Toggle "leaflet-almostover" integration
+					almostOver: true,  
+					
+					// Toggle "leaflet-distance-markers" integration
+					distanceMarkers: true,  
+					
+					// Display track waypoints
+					waypoints: true,  
 				},
 			},
 			layersControl: {
 				options: {
-					collapsed: false,
+					collapsed: true,
 				},
 			},
 		};
@@ -275,7 +330,7 @@
 			"Acceleration"      : "加速度",
 			"Altitude"          : "Altitude",
 			"Slope"             : "坡度",
-			"Speed"             : "Velocity",
+			"Speed"             : "速度",
 			"Total Length: "    : "總距離: ",
 			"Max Elevation: "   : "最高海拔: ",
 			"Min Elevation: "   : "最低海拔: ",
