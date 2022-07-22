@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?><gpx creator="Garmin Desktop App" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/WaypointExtension/v1 http://www8.garmin.com/xmlschemas/WaypointExtensionv1.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/ActivityExtension/v1 http://www8.garmin.com/xmlschemas/ActivityExtensionv1.xsd http://www.garmin.com/xmlschemas/AdventuresExtensions/v1 http://www8.garmin.com/xmlschemas/AdventuresExtensionv1.xsd http://www.garmin.com/xmlschemas/PressureExtension/v1 http://www.garmin.com/xmlschemas/PressureExtensionv1.xsd http://www.garmin.com/xmlschemas/TripExtensions/v1 http://www.garmin.com/xmlschemas/TripExtensionsv1.xsd http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1 http://www.garmin.com/xmlschemas/TripMetaDataExtensionsv1.xsd http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1 http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensionsv1.xsd http://www.garmin.com/xmlschemas/CreationTimeExtension/v1 http://www.garmin.com/xmlschemas/CreationTimeExtensionsv1.xsd http://www.garmin.com/xmlschemas/AccelerationExtension/v1 http://www.garmin.com/xmlschemas/AccelerationExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.garmin.com/xmlschemas/VideoExtension/v1 http://www.garmin.com/xmlschemas/VideoExtensionv1.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wptx1="http://www.garmin.com/xmlschemas/WaypointExtension/v1" xmlns:gpxtrx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:trp="http://www.garmin.com/xmlschemas/TripExtensions/v1" xmlns:adv="http://www.garmin.com/xmlschemas/AdventuresExtensions/v1" xmlns:prs="http://www.garmin.com/xmlschemas/PressureExtension/v1" xmlns:tmd="http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1" xmlns:vptm="http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1" xmlns:ctx="http://www.garmin.com/xmlschemas/CreationTimeExtension/v1" xmlns:gpxacc="http://www.garmin.com/xmlschemas/AccelerationExtension/v1" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:vidx1="http://www.garmin.com/xmlschemas/VideoExtension/v1">
+
+  <metadata>
+    <link href="http://www.garmin.com">
+      <text>Garmin International</text>
+    </link>
+    <time>2022-07-22T14:19:08Z</time>
+    <bounds maxlat="23.482778146862984" maxlon="120.90002409182489" minlat="23.475594520568848" minlon="120.88550655171275" />
+  </metadata>
+
+  <wpt lat="23.482460975646973" lon="120.88561534881592">
+    <ele>2587</ele>
+    <time>2009-05-25T14:59:46Z</time>
+    <name>001上東埔停車場</name>
+    <cmt>上東埔停車場</cmt>
+    <desc>上東埔停車場</desc>
+    <sym>Parking Area</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2009-05-25T14:59:46Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <wpt lat="23.481690008193254" lon="120.88662134483457">
+    <ele>2620</ele>
+    <time>2022-07-19T05:08:43Z</time>
+    <name>002-檢查哨</name>
+    <cmt>002-檢查哨</cmt>
+    <desc>002-檢查哨</desc>
+    <sym>Police Station</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2022-07-19T05:08:43Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <wpt lat="23.481235206127167" lon="120.88550655171275">
+    <ele>2587</ele>
+    <time>2022-07-19T05:08:43Z</time>
+    <name>東埔山莊</name>
+    <cmt>東埔山莊</cmt>
+    <desc>東埔山莊</desc>
+    <sym>Fishing Hot Spot Facility</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2022-07-19T05:08:43Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <trk>
+    <name>13玉山群峰-011停車場=&gt;登山口</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>Magenta</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="23.475594520568848" lon="120.8999490737915">
+        <ele>2625.0170899999998</ele>
+        <time>2008-05-01T22:46:36Z</time>
+      </trkpt>
+      <trkpt lat="23.475862573832273" lon="120.90002409182489">
+        <ele>2629.3432619999999</ele>
+        <time>2008-05-01T22:45:57Z</time>
+      </trkpt>
+      <trkpt lat="23.476767065003514" lon="120.89806146919727">
+        <ele>2645.685547</ele>
+        <time>2008-05-01T22:45:23Z</time>
+      </trkpt>
+      <trkpt lat="23.47811596468091" lon="120.89624586515129">
+        <ele>2672.6020509999998</ele>
+        <time>2008-05-01T22:44:47Z</time>
+      </trkpt>
+      <trkpt lat="23.479301584884524" lon="120.89482261799276">
+        <ele>2695.1933589999999</ele>
+        <time>2008-05-01T22:44:17Z</time>
+      </trkpt>
+      <trkpt lat="23.480082359164953" lon="120.89310089126229">
+        <ele>2715.3813479999999</ele>
+        <time>2008-05-01T22:43:47Z</time>
+      </trkpt>
+      <trkpt lat="23.477940699085593" lon="120.89082218706608">
+        <ele>2731.2426759999998</ele>
+        <time>2008-05-01T22:43:14Z</time>
+      </trkpt>
+      <trkpt lat="23.478540508076549" lon="120.89076519012451">
+        <ele>2724.033203</ele>
+        <time>2008-05-01T10:22:07Z</time>
+      </trkpt>
+      <trkpt lat="23.478390136733651" lon="120.88925703428686">
+        <ele>2702.4033199999999</ele>
+        <time>2008-05-01T10:22:37Z</time>
+      </trkpt>
+      <trkpt lat="23.478441936895251" lon="120.88715837337077">
+        <ele>2678.3706050000001</ele>
+        <time>2008-05-01T10:23:08Z</time>
+      </trkpt>
+      <trkpt lat="23.480050507932901" lon="120.88675428181887">
+        <ele>2654.3374020000001</ele>
+        <time>2008-05-01T10:23:38Z</time>
+      </trkpt>
+      <trkpt lat="23.481709705665708" lon="120.88664825074375">
+        <ele>2627.4204100000002</ele>
+        <time>2008-05-01T10:24:33Z</time>
+      </trkpt>
+      <trkpt lat="23.481729822233319" lon="120.88644716888666">
+        <ele>2625.9785160000001</ele>
+        <time>2008-05-01T10:25:28Z</time>
+      </trkpt>
+      <trkpt lat="23.482006592676044" lon="120.88587678037584">
+        <ele>2605.7905270000001</ele>
+        <time>2008-05-01T10:26:01Z</time>
+      </trkpt>
+      <trkpt lat="23.482778146862984" lon="120.88598859496415">
+        <ele>2592.3325199999999</ele>
+        <time>2008-05-01T10:26:47Z</time>
+      </trkpt>
+      <trkpt lat="23.481974909082055" lon="120.88561534881592">
+        <ele>2592.3325199999999</ele>
+        <time>2008-05-01T10:27:30Z</time>
+      </trkpt>
+      <trkpt lat="23.481398234143853" lon="120.8857199549675">
+        <ele>2591.851807</ele>
+        <time>2008-05-01T10:27:39Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+
+</gpx>
