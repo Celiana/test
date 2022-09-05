@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>leaflet-elevation.js</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="dns-prefetch" href="https://tile.opentopomap.org">
+	<link rel="dns-prefetch preconnect" href="https://unpkg.com" />
+	<link rel="preload" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" as="script">
+	<link rel="preload" href="https://unpkg.com/leaflet-ui@0.5.9/dist/leaflet-ui.js" as="script">
+	
+	<style>@import './libs/fullpage.css';</style>
+
+	<!-- leaflet-ui -->
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-ui@0.5.9/dist/leaflet-ui.js"></script>
+
+	<style>
+		.leaflet-right .leaflet-control-layers-list {
+			max-width: 250px;
+			max-height: 25vh;
+			overflow: auto;
+		}
+
+		.leaflet-tooltip {
+			font-weight: 700;
+		}
+
+		.chart-placeholder {
+			min-height: 20px;
+			text-align: center;
+			font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+			font-style: italic;
+			opacity: 0.6;
+			font-size: 0.9rem;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="map" class="leaflet-map"></div>
+	<div id="elevation-div" class="leaflet-control elevation"><p class="chart-placeholder">move mouse over a track...</p></div>
+
+	<script>
+		let opts = {
+			map: {
+				center: [25.048808, 121.514055],  //台北車站
+				zoom: 5,
+				
+				// Optional customizations
+				mapTypeId: 'topo',
+				mapTypeIds: ['satellite', 'osm', 'b25000', 'eMAP5', 'topo', 'rudyMapColor', 'rudyMapVanilla', 'town', 'village'],
+				mapTypes:{
+					osm: {
+						name: "OSM",
+						url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+						options: {
+							maxZoom: 24,
+							maxNativeZoom: 19,
+							attribution: 'Map data: © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+						}
+					},
+					terrain: {
+						name: "地形圖",
+						url: "https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
+						options: {
+							maxZoom: 24,
+							maxNativeZoom: 22,
+							attribution: 'Map data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | Map style: © <a href="http://www.thunderforest.com/">Thunderforest</a>'
+						}
+					},
+					satellite: {
+						name: "衛星圖", //ArcGIS衛星圖
+						url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+						options: {
+							maxZoom: 24,
+							maxNativeZoom: 18,
+							attribution: 'Map data: © <a href="http://www.esri.com/">Esri</a> — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+						}
+					},
+					rudyMapColor:{
+						name: "魯地圖彩色", //魯地圖彩色版(Rex提供)
+						url: 'http://rudy.tile.basecamp.tw/{z}/{x}/{y}.png',
+						options: {
+							attribution: '&copy; <a href="//rudy.basecamp.tw/taiwan_topo.html">Taiwan TOPO</a> contributors'
+						},
+					},
+					rudyMapVanilla:{
+						name: "魯地圖清爽", //魯地圖清爽版(happyman提供)
+						url: 'https://rs.happyman.idv.tw/map/moi_osm/{z}/{x}/{y}.png',
+						options: {
+							attribution: '&copy; <a href="//rudy.basecamp.tw/taiwan_topo.html">Taiwan TOPO</a> contributors'
+						},
+					},
+					happymanGpxTrack:{
+						name: "地圖產生器航跡",
+						url: 'http://rs.happyman.idv.tw/map/gpxtrack/{z}/{x}/{y}.png',
+						options: {
+							attribution: '&copy; <a href="//rudy.basecamp.tw/taiwan_topo.html">Taiwan TOPO</a> contributors'
+						},
+					},
+					eMAP5:{
+						name: "臺灣通用電子地圖", //臺灣通用電子地圖(等高線+門牌)
+						url: 'https://wmts.nlsc.gov.tw/wmts/EMAP5/default/GoogleMapsCompatible/{z}/{y}/{x}',
+						options: {
+							attribution: '&copy; <a href="https://maps.nlsc.gov.tw/S09SOA/">內政部國土測繪中心</a> contributors'
+						},
+					},
+					b25000:{
+						name: "1/25000經建", //1/25000 經建版地形圖
+						url: 'https://wmts.nlsc.gov.tw/wmts/B25000/default/GoogleMapsCompatible/{z}/{y}/{x}',
+						options: {
+							attribution: '&copy; <a href="https://maps.nlsc.gov.tw/S09SOA/">內政部國土測繪中心</a> contributors'
+						},
+					},
+					photo:{
+						name: "	正射影像圖(通用)",
+						url: 'https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}',
+						options: {
+							attribution: '&copy; <a href="https://maps.nlsc.gov.tw/S09SOA/">內政部國土測繪中心</a> contributors'
+						},
+					},
+					photoMix:{
+						name: "正射影像(混合)",
+						url: 'https://wmts.nlsc.gov.tw/wmts/PHOTO_MIX/default/GoogleMapsCompatible/{z}/{y}/{x}',
+						options: {
+							attribution: '&copy; <a href="https://maps.nlsc.gov.tw/S09SOA/">內政部國土測繪中心</a> contributors'
+						},
+					},
+					city:{
+						name: "縣市界",
+						url: 'https://wmts.nlsc.gov.tw/wmts/CITY/default/GoogleMapsCompatible/{z}/{y}/{x}',
+						options: {
+							attribution: '&copy; <a href="https://maps.nlsc.gov.tw/S09SOA/">內政部國土測繪中心</a> contributors'
+						},
+					},
+					town:{
+						name: "鄉鎮區界",
+						url: 'https://wmts.nlsc.gov.tw/wmts/TOWN/default/GoogleMapsCompatible/{z}/{y}/{x}',
+						options: {
+							attribution: '&copy; <a href="https://maps.nlsc.gov.tw/S09SOA/">內政部國土測繪中心</a> contributors'
+						},
+					},
+					village:{
+						name: "村里界",
+						url: 'https://wmts.nlsc.gov.tw/wmts/Village/default/GoogleMapsCompatible/{z}/{y}/{x}',
+						options: {
+							attribution: '&copy; <a href="https://maps.nlsc.gov.tw/S09SOA/">內政部國土測繪中心</a> contributors'
+						},
+					},
+				},
+				
+				
+			
+				
+				fullscreenControl: true,
+				resizerControl: true,
+				preferCanvas: true,
+				rotate: true,
+				// bearing: 45,
+				rotateControl: {
+					closeOnZeroBearing: true
+				},
+				gestureHandling: false,	// zoom with Cmd + Scroll
+				zoomControl: true,		// plus minus buttons
+				pegmanControl: true,	// Google街景人
+				locateControl: false,	// GPS定位
+				layersControl: true,
+				minimapControl: true,
+				editInOSMControl: false,
+				loadingControl: true,
+				searchControl: false,
+				//disableDefaultUI: false,
+				
+				plugins: [
+					"d3@6.5.0/dist/d3.min.js",
+					"@tmcw/togeojson@4.5.0/dist/togeojson.umd.js",
+					"leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.js",
+					"leaflet-almostover@1.0.1/src/leaflet.almostover.js",
+					"@raruto/leaflet-elevation@2.2.6/libs/leaflet-distance-marker.css",
+					"@raruto/leaflet-elevation@2.2.6/libs/leaflet-distance-marker.js",
+					"@raruto/leaflet-elevation@2.2.6/dist/leaflet-elevation.min.css",
+					"@raruto/leaflet-elevation@2.2.6/dist/leaflet-elevation.min.js",
+					"@raruto/leaflet-elevation@2.2.6/libs/leaflet-gpxgroup.js",
+					// "../libs/leaflet-distance-marker.css",
+					// "../libs/leaflet-distance-marker.js",
+					// "../dist/leaflet-elevation.css",
+					// "../dist/leaflet-elevation.js",
+					// "../libs/leaflet-gpxgroup.js",
+				],
+			},
+			points: {
+				icon: {
+					iconUrl: 'https://unpkg.com/@raruto/leaflet-elevation@1.3.5/images/elevation-poi.png',
+					iconSize: [12, 12],
+				},
+			},
+			elevation: {
+				theme: "yellow-theme",
+				detached: true,
+				elevationDiv: '#elevation-div',
+				followMarker: true,
+				zFollow: 15,
+				legend: false,
+			},
+		};
+
+		let tracks = [
+			"tracks/013-玉山群峰.gpx",
+			"tracks/玉山群峰_停車場-登山口.gpx",
+			"tracks/玉山群峰_登山口-排雲山莊.gpx",
+			"tracks/玉山群峰_玉山前峰.gpx",
+			"tracks/玉山群峰_排雲山莊-圓峰山屋.gpx",
+			"tracks/玉山群峰_圓峰山屋-南玉山.gpx",
+			"tracks/玉山群峰_圓峰山屋-東小南山-鹿山-玉山南峰.gpx",
+			"tracks/玉山群峰_圓峰山屋-玉山主峰-玉山東峰(傳統路).gpx",
+			"tracks/玉山群峰_圓峰山屋-玉山東峰(玉山南稜).gpx",
+			"tracks/玉山群峰_主北峰叉路-玉山北峰.gpx",
+			"tracks/玉山群峰_玉山北峰-玉山北北峰.gpx",
+			"tracks/玉山群峰_玉山西峰.gpx",
+			// "demo.tcx",
+			// "demo.kml",
+			// "demo.geojson",
+		];
+
+		let points = [
+			{latlng:[25.048808, 121.514055], name:"台北車站測試點"},
+		];
+
+		let map = L.map('map', opts.map);
+		let routes;
+
+		map.on('plugins_loaded', function(e) {
+
+			routes = L.gpxGroup(tracks, {
+				points: points,
+				points_options: opts.points,
+				elevation: true,
+				elevation_options: opts.elevation,
+				legend: true,
+				distanceMarkers: true,
+			});
+
+			map.on('eledata_added eledata_clear', ({type}) => {
+				let p = document.querySelector(".chart-placeholder");
+				if (p) {
+					p.style.display = type =='eledata_added' ? 'none' : '';
+				}
+			});
+
+			routes.addTo(map);
+
+			map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
+
+		});
+
+	</script>
+	<script>
+
+		// Register a custom locale
+		<!-- L.registerLocale('en:18', { -->
+			<!-- "Acceleration"      : "Acceleration", -->
+			<!-- "Altitude"          : "Elevation", -->
+			<!-- "Slope"             : "Slope", -->
+			<!-- "Speed"             : "Velocity", -->
+			<!-- "Total Length: "    : "L: ", -->
+			<!-- "Max Elevation: "   : "E Max: ", -->
+			<!-- "Min Elevation: "   : "E Min: ", -->
+			<!-- "Total Time: "      : "T: ", -->
+			<!-- "Total Ascent: "    : "Asc: ", -->
+			<!-- "Total Descent: "   : "Desc: ", -->
+			<!-- "Min Slope: "       : "S Min: ", -->
+			<!-- "Max Slope: "       : "S Max: ", -->
+			<!-- "Min Speed: "       : "V Min: ", -->
+			<!-- "Max Speed: "       : "V Max: ", -->
+			<!-- "Avg Speed: "       : "V Avg: ", -->
+			<!-- "Min Acceleration: ": "A Min: ", -->
+			<!-- "Max Acceleration: ": "A Max: ", -->
+			<!-- "Avg Acceleration: ": "A Avg: ", -->
+		<!-- }); -->
+		L.registerLocale('en:18', {
+			"Acceleration"      : "加速度",
+			"Altitude"          : "Altitude",
+			"Slope"             : "坡度",
+			"Speed"             : "速度",
+			"Total Length: "    : "總距離: ",
+			"Max Elevation: "   : "最高海拔: ",
+			"Min Elevation: "   : "最低海拔: ",
+			"Total Time: "      : "總時間: ",
+			"Total Ascent: "    : "總上升高度: ",
+			"Total Descent: "   : "總下降高度: ",
+			"Min Slope: "       : "最小坡度: ",
+			"Max Slope: "       : "最大坡度: ",
+			"Min Speed: "       : "最小速度: ",
+			"Max Speed: "       : "最大速度: ",
+			"Avg Speed: "       : "平均速度: ",
+			"Min Acceleration: ": "最小加速度: ",
+			"Max Acceleration: ": "最大加速度: ",
+			"Avg Acceleration: ": "平均加速度: ",
+		});
+
+		// Enable a custom locale
+		L.setLocale('en:18');
+
+	</script>
+
+</body>
+
+</html>
