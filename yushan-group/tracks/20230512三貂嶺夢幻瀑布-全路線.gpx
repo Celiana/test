@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?><gpx creator="Garmin Desktop App" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/WaypointExtension/v1 http://www8.garmin.com/xmlschemas/WaypointExtensionv1.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/ActivityExtension/v1 http://www8.garmin.com/xmlschemas/ActivityExtensionv1.xsd http://www.garmin.com/xmlschemas/AdventuresExtensions/v1 http://www8.garmin.com/xmlschemas/AdventuresExtensionv1.xsd http://www.garmin.com/xmlschemas/PressureExtension/v1 http://www.garmin.com/xmlschemas/PressureExtensionv1.xsd http://www.garmin.com/xmlschemas/TripExtensions/v1 http://www.garmin.com/xmlschemas/TripExtensionsv1.xsd http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1 http://www.garmin.com/xmlschemas/TripMetaDataExtensionsv1.xsd http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1 http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensionsv1.xsd http://www.garmin.com/xmlschemas/CreationTimeExtension/v1 http://www.garmin.com/xmlschemas/CreationTimeExtensionsv1.xsd http://www.garmin.com/xmlschemas/AccelerationExtension/v1 http://www.garmin.com/xmlschemas/AccelerationExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.garmin.com/xmlschemas/VideoExtension/v1 http://www.garmin.com/xmlschemas/VideoExtensionv1.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wptx1="http://www.garmin.com/xmlschemas/WaypointExtension/v1" xmlns:gpxtrx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:trp="http://www.garmin.com/xmlschemas/TripExtensions/v1" xmlns:adv="http://www.garmin.com/xmlschemas/AdventuresExtensions/v1" xmlns:prs="http://www.garmin.com/xmlschemas/PressureExtension/v1" xmlns:tmd="http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1" xmlns:vptm="http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1" xmlns:ctx="http://www.garmin.com/xmlschemas/CreationTimeExtension/v1" xmlns:gpxacc="http://www.garmin.com/xmlschemas/AccelerationExtension/v1" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:vidx1="http://www.garmin.com/xmlschemas/VideoExtension/v1">
+
+  <metadata>
+    <link href="http://www.garmin.com">
+      <text>Garmin International</text>
+    </link>
+    <time>2023-05-12T13:29:33Z</time>
+    <bounds maxlat="25.066593484953046" maxlon="121.82846546173096" minlat="25.060908794403076" minlon="121.8230152130127" />
+  </metadata>
+
+  <wpt lat="25.06155252456665" lon="121.8230152130127">
+    <time>2023-05-12T13:04:58Z</time>
+    <name>停車場4</name>
+    <cmt>停車場</cmt>
+    <desc>停車場</desc>
+    <sym>Parking Area</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2023-05-12T13:04:58Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <wpt lat="25.066444873809814" lon="121.82835817337036">
+    <time>2023-05-12T13:07:14Z</time>
+    <name>夢幻瀑布</name>
+    <cmt>夢幻瀑布
+碩仁里、 瑞芳區、 臺灣</cmt>
+    <desc>夢幻瀑布
+碩仁里、 瑞芳區、 臺灣</desc>
+    <sym>Dropoff</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+        <gpxx:Address>
+          <gpxx:City>碩仁里</gpxx:City>
+          <gpxx:State>瑞芳區</gpxx:State>
+          <gpxx:Country>臺灣</gpxx:Country>
+        </gpxx:Address>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+        <wptx1:Address>
+          <wptx1:City>碩仁里</wptx1:City>
+          <wptx1:State>瑞芳區</wptx1:State>
+          <wptx1:Country>臺灣</wptx1:Country>
+        </wptx1:Address>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2023-05-12T13:07:14Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <wpt lat="25.065173171460629" lon="121.82362952269614">
+    <time>2023-05-12T13:06:06Z</time>
+    <name>起溯點</name>
+    <sym>Flag, Blue</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2023-05-12T13:06:06Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <trk>
+    <name>全路線</name>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="25.06155252456665" lon="121.8230152130127" />
+      <trkpt lat="25.061559230089188" lon="121.82306407950819" />
+      <trkpt lat="25.061466693878174" lon="121.82307958602905" />
+      <trkpt lat="25.061101913452148" lon="121.82305812835693" />
+      <trkpt lat="25.060973167419434" lon="121.82310104370117" />
+      <trkpt lat="25.060908794403076" lon="121.82318687438965" />
+      <trkpt lat="25.060951709747314" lon="121.82333707809448" />
+      <trkpt lat="25.061016082763672" lon="121.82344436645508" />
+      <trkpt lat="25.061209201812744" lon="121.82350873947144" />
+      <trkpt lat="25.061681270599365" lon="121.82353019714355" />
+      <trkpt lat="25.061767101287842" lon="121.82361602783203" />
+      <trkpt lat="25.061831474304199" lon="121.82355165481567" />
+      <trkpt lat="25.061938762664795" lon="121.82340145111084" />
+      <trkpt lat="25.061960220336914" lon="121.82337999343872" />
+      <trkpt lat="25.061981678009033" lon="121.82329416275024" />
+      <trkpt lat="25.061981678009033" lon="121.82325124740601" />
+      <trkpt lat="25.061938762664795" lon="121.82316541671753" />
+      <trkpt lat="25.062046051025391" lon="121.82312250137329" />
+      <trkpt lat="25.06206750869751" lon="121.82307958602905" />
+      <trkpt lat="25.062196254730225" lon="121.82314395904541" />
+      <trkpt lat="25.062196254730225" lon="121.82322978973389" />
+      <trkpt lat="25.062174797058105" lon="121.82333707809448" />
+      <trkpt lat="25.062282085418701" lon="121.82331562042236" />
+      <trkpt lat="25.062282085418701" lon="121.82340145111084" />
+      <trkpt lat="25.062732696533203" lon="121.82327270507812" />
+      <trkpt lat="25.06305456161499" lon="121.82327270507812" />
+      <trkpt lat="25.063354969024658" lon="121.82325124740601" />
+      <trkpt lat="25.063591003417969" lon="121.82325124740601" />
+      <trkpt lat="25.063762664794922" lon="121.82320833206177" />
+      <trkpt lat="25.064191818237305" lon="121.82320833206177" />
+      <trkpt lat="25.06432056427002" lon="121.82318687438965" />
+      <trkpt lat="25.064513683319092" lon="121.82318687438965" />
+      <trkpt lat="25.064663887023926" lon="121.82327270507812" />
+      <trkpt lat="25.06481409072876" lon="121.82337999343872" />
+      <trkpt lat="25.065071582794189" lon="121.82365894317627" />
+      <trkpt lat="25.065157413482666" lon="121.82363748550415" />
+      <trkpt lat="25.065173171460629" lon="121.82362952269614" />
+      <trkpt lat="25.065173171460629" lon="121.82362952269614" />
+      <trkpt lat="25.065301666036248" lon="121.82375986129045" />
+      <trkpt lat="25.065414905548096" lon="121.82383060455322" />
+      <trkpt lat="25.065500736236572" lon="121.823970079422" />
+      <trkpt lat="25.065500736236572" lon="121.82460760697722" />
+      <trkpt lat="25.065416246652603" lon="121.82494129054248" />
+      <trkpt lat="25.065479781478643" lon="121.82518344372511" />
+      <trkpt lat="25.065583297982812" lon="121.82541134767234" />
+      <trkpt lat="25.066028041765094" lon="121.8258814048022" />
+      <trkpt lat="25.066532799974084" lon="121.82615633122623" />
+      <trkpt lat="25.066593484953046" lon="121.82641105726361" />
+      <trkpt lat="25.066551575437188" lon="121.82656947523355" />
+      <trkpt lat="25.066509414464235" lon="121.82755971327424" />
+      <trkpt lat="25.066530704498291" lon="121.82811878621578" />
+      <trkpt lat="25.066444873809814" lon="121.82835817337036" />
+      <trkpt lat="25.066444873809814" lon="121.82835817337036" />
+      <trkpt lat="25.066423416137695" lon="121.82837963104248" />
+      <trkpt lat="25.066401958465576" lon="121.828293800354" />
+      <trkpt lat="25.066337585449219" lon="121.82846546173096" />
+      <trkpt lat="25.066273212432861" lon="121.828293800354" />
+      <trkpt lat="25.066230297088623" lon="121.828293800354" />
+      <trkpt lat="25.066123008728027" lon="121.82818651199341" />
+      <trkpt lat="25.065972805023193" lon="121.82777881622314" />
+      <trkpt lat="25.065844058990479" lon="121.82760715484619" />
+      <trkpt lat="25.065758228302002" lon="121.827392578125" />
+      <trkpt lat="25.065715312957764" lon="121.82717800140381" />
+      <trkpt lat="25.065650939941406" lon="121.82702779769897" />
+      <trkpt lat="25.065500736236572" lon="121.8269419670105" />
+      <trkpt lat="25.06505012512207" lon="121.82707071304321" />
+      <trkpt lat="25.064663887023926" lon="121.82726383209229" />
+      <trkpt lat="25.06455659866333" lon="121.82734966278076" />
+      <trkpt lat="25.064513683319092" lon="121.827392578125" />
+      <trkpt lat="25.064427852630615" lon="121.82737112045288" />
+      <trkpt lat="25.064277648925781" lon="121.82745695114136" />
+      <trkpt lat="25.064127445220947" lon="121.82747840881348" />
+      <trkpt lat="25.063998699188232" lon="121.82754278182983" />
+      <trkpt lat="25.063741207122803" lon="121.82777881622314" />
+      <trkpt lat="25.063633918762207" lon="121.82792901992798" />
+      <trkpt lat="25.06354808807373" lon="121.82792901992798" />
+      <trkpt lat="25.063462257385254" lon="121.82792901992798" />
+      <trkpt lat="25.063333511352539" lon="121.8279504776001" />
+      <trkpt lat="25.063204765319824" lon="121.82786464691162" />
+      <trkpt lat="25.063140392303467" lon="121.82769298553467" />
+      <trkpt lat="25.063033103942871" lon="121.82754278182983" />
+      <trkpt lat="25.063011646270752" lon="121.827392578125" />
+      <trkpt lat="25.063033103942871" lon="121.82726383209229" />
+      <trkpt lat="25.063161849975586" lon="121.82707071304321" />
+      <trkpt lat="25.06331205368042" lon="121.82692050933838" />
+      <trkpt lat="25.063505172729492" lon="121.82662010192871" />
+      <trkpt lat="25.063655376434326" lon="121.82619094848633" />
+      <trkpt lat="25.063655376434326" lon="121.82608366012573" />
+      <trkpt lat="25.063719749450684" lon="121.82601928710937" />
+      <trkpt lat="25.063741207122803" lon="121.8259334564209" />
+      <trkpt lat="25.064191818237305" lon="121.82531118392944" />
+      <trkpt lat="25.064406394958496" lon="121.82507514953613" />
+      <trkpt lat="25.064492225646973" lon="121.82505369186401" />
+      <trkpt lat="25.064535140991211" lon="121.8249249458313" />
+      <trkpt lat="25.064492225646973" lon="121.82471036911011" />
+      <trkpt lat="25.064406394958496" lon="121.82464599609375" />
+      <trkpt lat="25.06432056427002" lon="121.82453870773315" />
+      <trkpt lat="25.064191818237305" lon="121.82430267333984" />
+      <trkpt lat="25.064084529876709" lon="121.82417392730713" />
+      <trkpt lat="25.063977241516113" lon="121.82395935058594" />
+      <trkpt lat="25.063741207122803" lon="121.82372331619263" />
+      <trkpt lat="25.06354808807373" lon="121.82363748550415" />
+      <trkpt lat="25.063419342041016" lon="121.82372331619263" />
+      <trkpt lat="25.063204765319824" lon="121.8238091468811" />
+      <trkpt lat="25.063097476959229" lon="121.82372331619263" />
+      <trkpt lat="25.063161849975586" lon="121.82355165481567" />
+      <trkpt lat="25.063076019287109" lon="121.82337999343872" />
+      <trkpt lat="25.06305456161499" lon="121.82327270507812" />
+      <trkpt lat="25.062732696533203" lon="121.82327270507812" />
+      <trkpt lat="25.062282085418701" lon="121.82340145111084" />
+      <trkpt lat="25.062282085418701" lon="121.82331562042236" />
+      <trkpt lat="25.062174797058105" lon="121.82333707809448" />
+      <trkpt lat="25.062196254730225" lon="121.82322978973389" />
+      <trkpt lat="25.062196254730225" lon="121.82314395904541" />
+      <trkpt lat="25.06206750869751" lon="121.82307958602905" />
+      <trkpt lat="25.062046051025391" lon="121.82312250137329" />
+      <trkpt lat="25.061938762664795" lon="121.82316541671753" />
+      <trkpt lat="25.061981678009033" lon="121.82325124740601" />
+      <trkpt lat="25.061981678009033" lon="121.82329416275024" />
+      <trkpt lat="25.061960220336914" lon="121.82337999343872" />
+      <trkpt lat="25.061938762664795" lon="121.82340145111084" />
+      <trkpt lat="25.061831474304199" lon="121.82355165481567" />
+      <trkpt lat="25.061767101287842" lon="121.82361602783203" />
+      <trkpt lat="25.061681270599365" lon="121.82353019714355" />
+      <trkpt lat="25.061209201812744" lon="121.82350873947144" />
+      <trkpt lat="25.061016082763672" lon="121.82344436645508" />
+      <trkpt lat="25.060951709747314" lon="121.82333707809448" />
+      <trkpt lat="25.060908794403076" lon="121.82318687438965" />
+      <trkpt lat="25.060973167419434" lon="121.82310104370117" />
+      <trkpt lat="25.061101913452148" lon="121.82305812835693" />
+      <trkpt lat="25.061466693878174" lon="121.82307958602905" />
+      <trkpt lat="25.061559230089188" lon="121.82306407950819" />
+      <trkpt lat="25.06155252456665" lon="121.8230152130127" />
+    </trkseg>
+  </trk>
+
+</gpx>
